@@ -1,0 +1,13 @@
+- 코드 수정 후 재배포 과정 -
+
+이클립스에서 runas -> maven build(package)
+
+scp -i "C:\Users\user\.ssh\bootServer.pem" "C:\javas\boot_workspace\boot\target\boot-0.0.1-SNAPSHOT.war" ubuntu@ec2-13-209-88-226.ap-northeast-2.compute.amazonaws.com:~
+
+ubuntu@ip-172-31-32-35:~$ sudo systemctl stop tomcat
+
+ubuntu@ip-172-31-32-35:~$ sudo rm -rf /opt/tomcat/tomcat-10/webapps/boot
+ubuntu@ip-172-31-32-35:~$ sudo rm -rf /opt/tomcat/tomcat-10/webapps/boot.war
+
+ubuntu@ip-172-31-32-35:~$ sudo mv boot-0.0.1-SNAPSHOT.war /opt/tomcat/tomcat-10/webapps/boot.war
+ubuntu@ip-172-31-32-35:~$ sudo systemctl start tomcat

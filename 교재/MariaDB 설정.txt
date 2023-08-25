@@ -1,0 +1,21 @@
+CREATE DATABASE boot;
+USE  boot;
+CREATE TABLE boot_board(
+	no int,
+	title varchar(100),
+	content varchar(200),
+	id varchar(20),
+	write_date varchar(15),
+	hits int,
+	file_name varchar(255),
+	primary key(no)
+)DEFAULT CHARSET=utf8;
+
+CREATE TABLE boot_member(
+	id VARCHAR(20),
+	pw VARCHAR(60),
+	user_name VARCHAR(15),
+	address VARCHAR(255),
+	mobile VARCHAR(20),
+	primary key(id)
+)DEFAULT CHARSET=utf8;
